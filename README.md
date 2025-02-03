@@ -1,1 +1,1 @@
-Group assignment 1 for Scientific Computing 
+# Group assignment 1 for Scientific Computing 
