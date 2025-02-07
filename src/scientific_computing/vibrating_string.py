@@ -16,6 +16,20 @@ t = 1
 
 
 def solve_vibrating_string(dx, dt, L=1, t=1, c=1,a=5,piecew=False):
+    """Solves the wave equation for a 1D string
+    
+    Args:
+        dx (float): Step size in x dimension
+        dt (float): Step size in time dimension
+        L (float): Length of the string
+        t (float): Simulation time
+        c (float): Constant in the wave equation
+        a (float): Parameter to scale the argument of an IC function
+        piecew (boolean): If True, chooses piecewise initial condition instead
+        of pure sin function
+    Returns:
+        u (2D array): The spatio-temporal solution of the 1D equation
+    """
     r = (c*dt/dx)**2
     nx = int(L/dx + 1) # number of columns
     nt = int(t/dt + 1)# number of rows
@@ -48,8 +62,12 @@ def solve_vibrating_string(dx, dt, L=1, t=1, c=1,a=5,piecew=False):
     return u
 
 def plot_vibrating_string(u,L,t):
+    """Plots the solution of 1D wave equation for a string"""
     plt.imshow(u,extent=[0,L,t,0])
-    plt.colorbar()
+    plt.xlabel('x')
+    plt.ylabel('Time')
+    plt.colorbar(label='Amplitude')
+    
     plt.show()
 
     #def animate_string(u,x):
@@ -65,11 +83,13 @@ def plot_vibrating_string(u,L,t):
     #    plt.show()
 
 def animate_string(u, x):
+    """Animates the solution of 1D wave equation for a string"""
     fig, ax = plt.subplots()
     line, = ax.plot([], []) 
     ax.set_xlim(min(x), max(x))
     ax.set_ylim(np.min(u), np.max(u))
-    
+    ax.set_xlabel('x')
+    ax.set_ylabel('Time')
     def update(frame):
         line.set_data(x, u[frame,:])
         return [line]

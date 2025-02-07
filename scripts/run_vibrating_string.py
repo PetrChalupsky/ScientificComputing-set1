@@ -1,6 +1,4 @@
 from scientific_computing.vibrating_string import solve_vibrating_string, plot_vibrating_string, animate_string
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 import numpy as np
 
 h = 0.01
