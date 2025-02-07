@@ -1,0 +1,1 @@
+from scientific_computing.vibrating_string import solve_vibrating_string
