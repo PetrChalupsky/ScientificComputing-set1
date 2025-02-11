@@ -178,3 +178,6 @@ pyrightconfig.json
 *.png
 *.mp4
 *.gif
+
+# Do not save data to git
+*.npy

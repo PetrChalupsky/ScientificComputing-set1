@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+list_omega = np.load('data/list_omega.npy')
+list_omega_object1 = np.load ('data/list_omega_object1.npy')
+list_omega_object2 = np.load('data/list_omega_object2.npy')
+fig = plt.figure(figsize=(8, 6))
+list_N = [20,30,40,50,60, 70,80]
+plt.plot(list_N, list_omega_object1, 'o-', label='Rectangle')     
+plt.plot(list_N, list_omega_object2, 'o-', label='Multiple rectangles')
+plt.plot(list_N, list_omega, 'o-', label='No object')
+
+#plt.title('Optimal Omega versus Width of Grid with objects', fontsize=14)
+plt.xlabel('$N$', fontsize=14)
+plt.ylabel(r'$\omega$', fontsize=14)
+plt.legend()
+
+
+fig.savefig("results/sor_with_objects_optimal_omega.png", dpi=300)
+

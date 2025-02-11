@@ -43,21 +43,20 @@ def solve_vibrating_string(dx, dt, L=1, t=1, c=1,a=5,piecew=False):
     else:
         for i, position in enumerate(x):
             if 1/5 < position < 2/5:
-                print(position)
                 u[0,i] = np.sin(a*pi*position)
             else:
                 u[0,i] = 0 
             
     
-    if u[0,0] !=0 or u[0,-1] !=0:
+    if u[0,0] > 0.0001 or u[0,-1] > 0.0001:
         print('Boundary conditions not fulfilled')
     
     
-    u[1,1:-1] = u[0,1:-1] + 0.5*(r**2)* (u[0,2:] - 2*u[0,1:-1] + u[0,:-2])
+    u[1,1:-1] = u[0,1:-1] + 0.5*r* (u[0,2:] - 2*u[0,1:-1] + u[0,:-2])
     
     
     for n in range(1, nt-1):
-        u[n+1, 1:-1] = 2*u[n, 1:-1] - u[n-1,1:-1] + r**2 * (u[n, 2:] - 2*u[n,1:-1] + u[n,:-2])
+        u[n+1, 1:-1] = 2*u[n, 1:-1] - u[n-1,1:-1] + r * (u[n, 2:] - 2*u[n,1:-1] + u[n,:-2])
 
     return u
 
@@ -68,7 +67,7 @@ def plot_vibrating_string(u,L,t):
     plt.ylabel('Time')
     plt.colorbar(label='Amplitude')
     
-    plt.show()
+    plt.savefig("results/vibrating_string")
 
     #def animate_string(u,x):
     #    fig = plt.figure()
@@ -103,6 +102,6 @@ def animate_string(u, x):
         blit=True
     )
     
-    plt.show()
+    anim.save('results/animate_string.mp4')
     return anim  
 

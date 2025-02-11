@@ -131,23 +131,23 @@ def visualize_comparison(width, eps):
     
     jacobi_grid = jacobi_iteration(width, eps)[0]
     jacobi_y = np.sum(jacobi_grid, axis=1) / width
-    plt.plot(np.linspace(0, 1, width+1), jacobi_y, label='Jacobi')
+    plt.plot(np.linspace(0, 1, width), jacobi_y, label='Jacobi')
 
     gauss_seidel_grid = gauss_seidel(width, eps)[0]
     g_s_y = np.sum(gauss_seidel_grid, axis=1) / width
-    plt.plot(np.linspace(0, 1, width+1), g_s_y, label='Gauss-Seidel')
+    plt.plot(np.linspace(0, 1, width), g_s_y, label='Gauss-Seidel')
 
     sor_grid = sor(width, eps, 1.71)[0]
     sor_y = np.sum(sor_grid, axis=1) / width
-    plt.plot(np.linspace(0, 1, width+1), sor_y, label=r'SOR $\omega=1.71$')
+    plt.plot(np.linspace(0, 1, width), sor_y, label=r'SOR $\omega=1.71$')
 
     sor_grid = sor(width, eps, 1.81)[0]
     sor_y = np.sum(sor_grid, axis=1) / width
-    plt.plot(np.linspace(0, 1, width+1), sor_y, label=r'SOR $\omega=1.81$')
+    plt.plot(np.linspace(0, 1, width), sor_y, label=r'SOR $\omega=1.81$')
 
     sor_grid = sor(width, eps, 1.91)[0]
     sor_y = np.sum(sor_grid, axis=1) / width
-    plt.plot(np.linspace(0, 1, width+1), sor_y, label=r'SOR $\omega=1.91$')
+    plt.plot(np.linspace(0, 1, width), sor_y, label=r'SOR $\omega=1.91$')
     
     plt.plot(np.linspace(0, 1, 51), analytical_solution(1, 1), linestyle='--', label='Analytical')
         
@@ -211,8 +211,6 @@ def visualize_optimal_omega(width, eps):
         
         index = num_iterations.index(min(num_iterations))
 
-        if width == 50:
-            print(num_iterations[index], omega_list[index])
 
         return omega_list[index]
 
@@ -240,10 +238,10 @@ width = 50
 eps = 0.00001
 
 fig1 = visualize_comparison(width, eps)
-fig1.savefig("iteration_methods_comparison.png", dpi=300)
+fig1.savefig("results/iteration_methods_comparison.png", dpi=300)
 
 fig2 = visualize_comparison_delta(width, eps)
-fig2.savefig("iteration_methods_delta_comparison.png", dpi=300)
+fig2.savefig("results/iteration_methods_delta_comparison.png", dpi=300)
 
 fig3 = visualize_optimal_omega(width, eps)
-fig3.savefig("sor_optimal_omega.png", dpi=300)
+fig3.savefig("results/sor_optimal_omega.png", dpi=300)

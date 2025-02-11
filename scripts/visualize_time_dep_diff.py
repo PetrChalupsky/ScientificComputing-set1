@@ -122,8 +122,8 @@ def heatmap_plot(width, D, dt):
 
     times = [0, 0.001, 0.01, 0.1, 1]
 
-    fig2, axes = plt.subplots(2, 3, figsize=(10, 6)) 
-    cbar_ax = fig2.add_axes([0.92, 0.15, 0.02, 0.7])
+    fig2, axes = plt.subplots(2, 3, figsize=(10, 6),sharey=True, sharex=True, constrained_layout=True) 
+    #cbar_ax = fig2.add_axes([0.92, 0.15, 0.02, 0.7])
 
     for i, time in enumerate(times):
         row, col = divmod(i, 3)  
@@ -132,10 +132,10 @@ def heatmap_plot(width, D, dt):
         axes[row, col].set_title('t=' + str(time))
     
     axes[1,2].axis('off')
+        
+    fig2.colorbar(im, ax=axes[:,:], fraction=0.04, pad=0.01)
 
-    fig2.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
-
-    fig2.colorbar(im, cax=cbar_ax)
+    #fig2.colorbar(im, cax=cbar_ax)
     fig2.suptitle("Heatmap of Concentration for multiple Time Values", fontsize=14)
     fig2.supxlabel("$x$-coordinate", fontsize=14)
     fig2.supylabel("$y$-coordinate", fontsize=14)
@@ -173,10 +173,10 @@ D = 1
 dt = 0.0001
 
 fig1 = visualize_comparison(width, D, dt)
-fig1.savefig("time_dep_diff_comparison_1.png", dpi=300)
+fig1.savefig("results/time_dep_diff_comparison_1.png", dpi=300)
 
 fig2 = heatmap_plot(width, D, dt)
-fig2.savefig("time_dep_diff_heatmaps.png", dpi=300)
+fig2.savefig("results/time_dep_diff_heatmaps.png", dpi=300,bbox_inches='tight')
 
 #t = 1
 #ani = animation(width, D, dt, t)

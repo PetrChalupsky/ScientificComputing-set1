@@ -1,0 +1,8 @@
+stretch colorbar correctly for vibrating string
+remove titles from graphs
+make time_dep_diff_heatmaps tighter
+legend in time_dep_diff_comparison_1 could maybe be made nicer
+check that sor_with objects is plotting correctly
+consider only using one graph with optimal omega
+check if font sizes look good in overleaf
+heatmap_primitive_insulation is kinda useless, might delete later
