@@ -55,7 +55,7 @@ def heatmap_plot():
     Calculate the concentration on a square grid and generate
     heatmaps for multiple times.
     """
-    times = [0, 0.001, 0.01, 0.1, 1]
+    times = [0.001, 0.01, 0.1, 1]
     grid = {}
     analy_sol = {}
     for i, time in enumerate(times):

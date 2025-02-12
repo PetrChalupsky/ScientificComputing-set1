@@ -7,7 +7,7 @@ width = 50
 D = 1
 dt = 0.0001
 
-times = [0, 0.001, 0.01, 0.1, 1]
+times = [0.001, 0.01, 0.1, 1]
 for time in times:
     grid = time_dep_diff(width, D, dt, time)
     analy_sol = analytical_solution(1, time)
