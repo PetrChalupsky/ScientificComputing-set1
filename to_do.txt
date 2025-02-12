@@ -1,4 +1,5 @@
-remove titles from graphs
-check that sor_with objects is plotting correctly
+
+check that code is sufficiently commented
+add unit tests
 check if font sizes look good in overleaf
 heatmap_primitive_insulation is kinda useless, might delete later

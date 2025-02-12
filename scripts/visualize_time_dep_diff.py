@@ -2,6 +2,7 @@
 This code contains functions to calculate and visualize concentration diffusion
 over a square grid, using the time dependent diffusion equation.
 """
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
@@ -18,69 +19,80 @@ def visualize_comparison(width):
     grid = {}
     analy_sol = {}
     for i, time in enumerate(times):
-        grid[i] = np.load(f'data/time_dep_diff_{time}.npy')
-        analy_sol[i] = np.load(f'data/time_dep_diff_analy_{time}.npy')
+        grid[i] = np.load(f"data/time_dep_diff_{time}.npy")
+        analy_sol[i] = np.load(f"data/time_dep_diff_analy_{time}.npy")
 
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+    colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
     i = 0
-    
+
     fig = plt.figure(figsize=(8, 6))
     for i, time in enumerate(times):
         concentration_y = np.sum(grid[i], axis=1) / width
-        plt.plot(np.linspace(0, 1, width), concentration_y, label='t=' + str(time), color=colors[i])
-        plt.plot(np.linspace(0, 1, width), analy_sol[i], linestyle='--')
+        plt.plot(
+            np.linspace(0, 1, width),
+            concentration_y,
+            label="t=" + str(time),
+            color=colors[i],
+        )
+        plt.plot(np.linspace(0, 1, width), analy_sol[i], linestyle="--")
         i = i + 1
 
     handles, labels = plt.gca().get_legend_handles_labels()
-    custom_label = Line2D([0], [0], linestyle='--', color='black', label='Analytical sol.')
+    custom_label = Line2D(
+        [0], [0], linestyle="--", color="black", label="Analytical sol."
+    )
 
-    handles.append(custom_label) 
-    plt.xlabel('$y$-coordinate', fontsize=14)
-    plt.ylabel('Concentration', fontsize=14)
+    handles.append(custom_label)
+    plt.xlabel("$y$-coordinate", fontsize=14)
+    plt.ylabel("Concentration", fontsize=14)
     plt.legend(handles=handles, fontsize=14)
 
     return fig
 
+
 def heatmap_plot():
     """
-    Calculate the concentration on a square grid and generate 
-    heatmaps for multiple times. 
+    Calculate the concentration on a square grid and generate
+    heatmaps for multiple times.
     """
     times = [0, 0.001, 0.01, 0.1, 1]
     grid = {}
     analy_sol = {}
     for i, time in enumerate(times):
-        grid[i] = np.load(f'data/time_dep_diff_{time}.npy')
-        analy_sol[i] = np.load(f'data/time_dep_diff_analy_{time}.npy')
+        grid[i] = np.load(f"data/time_dep_diff_{time}.npy")
+        analy_sol[i] = np.load(f"data/time_dep_diff_analy_{time}.npy")
 
     fig2, axes = plt.subplots(2, 3, figsize=(10, 6), sharey=True)
-    
+
     # Reduce spacing between subplots
     plt.subplots_adjust(wspace=-0.01, hspace=0.25)
-    
+
     for i, time in enumerate(times):
-        row, col = divmod(i, 3)  
-        im = axes[row, col].imshow(grid[i], origin='lower', cmap='inferno', extent=[0,1,0,1])
-        axes[row, col].set_title('t=' + str(time))
-    
-    axes[1,2].axis('off')
-    
-    fig2.colorbar(im, ax=axes[:,:], fraction=0.05, pad=0.025)
+        row, col = divmod(i, 3)
+        im = axes[row, col].imshow(
+            grid[i], origin="lower", cmap="inferno", extent=[0, 1, 0, 1]
+        )
+        axes[row, col].set_title("t=" + str(time))
+
+    axes[1, 2].axis("off")
+
+    fig2.colorbar(im, ax=axes[:, :], fraction=0.05, pad=0.025)
     fig2.supxlabel("$x$-coordinate", fontsize=14)
-    fig2.supylabel("$y$-coordinate", fontsize=14,x=0.1)
-    
+    fig2.supylabel("$y$-coordinate", fontsize=14, x=0.1)
+
     return fig2
+
 
 def animation(width, D, dt, total_time):
     """
     Make an animation of the heatmap of the time dependent diffusion equation
-    over time until a steady state is reached. 
+    over time until a steady state is reached.
     """
     fig, ax = plt.subplots(figsize=(8, 6))
 
     # Initial grid
     grid = time_dep_diff(width, D, dt, 0)
-    im = ax.imshow(grid, origin='lower', cmap='inferno', extent=[0,1,0,1])
+    im = ax.imshow(grid, origin="lower", cmap="inferno", extent=[0, 1, 0, 1])
 
     ax.set_xlabel("$x$-coordinate", fontsize=14)
     ax.set_ylabel("$y$-coordinate", fontsize=14)
@@ -96,14 +108,15 @@ def animation(width, D, dt, total_time):
 
     return ani
 
-# Figures and animation 
+
+# Figures and animation
 width = 50
 
 fig1 = visualize_comparison(width)
 fig1.savefig("results/time_dep_diff_comparison_1.png", dpi=300)
 
 fig2 = heatmap_plot()
-fig2.savefig("results/time_dep_diff_heatmaps.png", dpi=300,bbox_inches='tight')
+fig2.savefig("results/time_dep_diff_heatmaps.png", dpi=300, bbox_inches="tight")
 
-#ani = animation(width, D, dt, t)
-#ani.save("time_dep_diff_animation.gif", dpi=300)
+# ani = animation(width, D, dt, t)
+# ani.save("time_dep_diff_animation.gif", dpi=300)
