@@ -9,7 +9,7 @@ fig, axes = plt.subplots(1,3, sharey=True,figsize=(15,5),constrained_layout=True
 im0 = axes[0].imshow(string_1, origin='lower')
 im1 = axes[1].imshow(string_2,origin='lower')
 im2 = axes[2].imshow(string_3, origin='lower')
-fig.colorbar(im0, ax=axes[:], fraction=0.02, pad=0.01)
+fig.colorbar(im0, ax=axes[:], fraction=0.016, pad=0.01)
 
 axes[0].set_ylabel('Time', fontsize=14)
 axes[1].set_xlabel('$x$-coordinate', fontsize=14)
