@@ -1,8 +1,6 @@
 #!/bin/bash
 
 echo "Starting computation"
-echo "Running add_object_SOR"
-python scripts/add_object_SOR.py
 echo "Running heatmap_objects"
 python scripts/heatmap_objects.py
 echo "Running objects_omega"
