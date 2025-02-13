@@ -34,6 +34,7 @@ def visualize_comparison(width):
             label="t=" + str(time),
             color=colors[i],
         )
+
         plt.plot(np.linspace(0, 1, width), analy_sol[i], linestyle="--")
         i = i + 1
 
@@ -55,12 +56,10 @@ def heatmap_plot():
     Calculate the concentration on a square grid and generate
     heatmaps for multiple times.
     """
-    times = [0.001, 0.01, 0.1, 1]
+    times = [0, 0.001, 0.01, 0.1, 1]
     grid = {}
-    analy_sol = {}
     for i, time in enumerate(times):
         grid[i] = np.load(f"data/time_dep_diff_{time}.npy")
-        analy_sol[i] = np.load(f"data/time_dep_diff_analy_{time}.npy")
 
     fig2, axes = plt.subplots(2, 3, figsize=(10, 6), sharey=True)
 

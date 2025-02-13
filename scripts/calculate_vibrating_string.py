@@ -19,9 +19,8 @@ u1 = solve_vibrating_string(dx, dt, L, t, c, a=5, piecew=True)
 u2 = solve_vibrating_string(dx, dt, L, t, c)
 u3 = solve_vibrating_string(dx, dt, L, t, c, a=2)
 
-
-animate_string(u3, x)
-
 np.save("data/string_1.npy", u1)
 np.save("data/string_2.npy", u2)
 np.save("data/string_3.npy", u3)
+
+animate_string(u3, x)
