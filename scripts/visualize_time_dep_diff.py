@@ -119,5 +119,8 @@ fig1.savefig("results/time_dep_diff_comparison_1.png", dpi=300)
 fig2 = heatmap_plot()
 fig2.savefig("results/time_dep_diff_heatmaps.png", dpi=300, bbox_inches="tight")
 
-#ani = animation(width, D, dt, t)
-#ani.save("time_dep_diff_animation.gif", dpi=300)
+D = 1
+dt = 0.0001
+total_time = 1
+ani = animation(width, D, dt, total_time)
+ani.save("results/time_dep_diff_animation.gif", dpi=300)

@@ -3,3 +3,4 @@ check that code is sufficiently commented
 add unit tests
 check if font sizes look good in overleaf
 heatmap_primitive_insulation is kinda useless, might delete later
+check animation diffusion equation
