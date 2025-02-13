@@ -7,7 +7,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scientific_computing.laplace import analytical_solution
 
-
 def visualize_comparison(width):
     """
     Returns figure for the comparison between the numerical and analytical

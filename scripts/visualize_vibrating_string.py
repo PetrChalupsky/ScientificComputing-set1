@@ -16,9 +16,7 @@ fig.colorbar(im0, ax=axes[:], fraction=0.016, pad=0.01)
 
 axes[0].set_ylabel("Time", fontsize=14)
 axes[1].set_xlabel("$x$-coordinate", fontsize=14)
-axes[0].set_title(
-    "A"
-)  # Initial conditions a=5, piecewise (viz assignment instructions)
+axes[0].set_title("A")  # Initial conditions a=5, piecewise (viz assignment instructions)
 axes[1].set_title("B")  # Initial conditions a=5
 axes[2].set_title("C")  # Initial conditions a=2
 

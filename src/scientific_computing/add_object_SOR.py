@@ -63,6 +63,7 @@ def optimal_omega_objects(width, eps, objects):
         k = sor_with_objects(width, eps, omega, objects)[1]
         num_iterations.append(k)
 
+    # Find index of minimal number of iterations
     index = num_iterations.index(min(num_iterations))
 
     return omega_list[index]
@@ -95,6 +96,7 @@ def optimal_omega(width, eps):
         k = sor(width, eps, omega)[1]
         num_iterations.append(k)
 
+    # Find index of minimal number of iterations
     index = num_iterations.index(min(num_iterations))
 
     return omega_list[index]

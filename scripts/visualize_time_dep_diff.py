@@ -15,6 +15,8 @@ def visualize_comparison(width):
     Returns figure for the comparison of the numerical and analytical
     solution of the time dependent diffusion equation for multiple values of time.
     """
+
+    # t=0 is not included since the analytical solution cannot be calculated for t=0
     times = [0.001, 0.01, 0.1, 1]
     grid = {}
     analy_sol = {}
@@ -117,5 +119,5 @@ fig1.savefig("results/time_dep_diff_comparison_1.png", dpi=300)
 fig2 = heatmap_plot()
 fig2.savefig("results/time_dep_diff_heatmaps.png", dpi=300, bbox_inches="tight")
 
-# ani = animation(width, D, dt, t)
-# ani.save("time_dep_diff_animation.gif", dpi=300)
+#ani = animation(width, D, dt, t)
+#ani.save("time_dep_diff_animation.gif", dpi=300)

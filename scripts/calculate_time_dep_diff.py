@@ -12,9 +12,10 @@ for time in times:
     grid = time_dep_diff(width, D, dt, time)
     np.save(f"data/time_dep_diff_{time}", grid)
 
+    # At t=0 it is not possible to calculate analytical solution
     if time == 0:
         continue
 
-    analy_sol = analytical_solution(1, time)
+    analy_sol = analytical_solution(D, time)
     np.save(f"data/time_dep_diff_analy_{time}", analy_sol)
 
