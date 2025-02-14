@@ -80,7 +80,7 @@ def analytical_solution(D, t):
     y = np.linspace(0, 1, 50)
     solution = np.zeros_like(y)
 
-    i_values = np.arange(0, 10000)
+    i_values = np.linspace(0, 10000, 10001)
     sqrt_term = 2 * np.sqrt(D * t)
 
     for k in range(50):
