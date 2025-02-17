@@ -1,14 +1,16 @@
 #!/bin/bash
 
 echo "Starting computation"
-echo "Running add_object_SOR"
-python scripts/add_object_SOR.py
 echo "Running heatmap_objects"
 python scripts/heatmap_objects.py
 echo "Running objects_omega"
 python scripts/objects_omega.py
 echo "Running vibrating_string"
-python scripts/vibrating_string.py
+python scripts/calculate_vibrating_string.py
+echo "Running calculate_laplace"
+python scripts/calculate_laplace.py
+echo "Running calculate_time_dep_diff"
+python scripts/calculate_time_dep_diff.py
 echo "Running visualize_heatmap_insulation"
 python scripts/visualize_heatmap_insulation.py
 echo "Running visualize_heatmap_objects"
