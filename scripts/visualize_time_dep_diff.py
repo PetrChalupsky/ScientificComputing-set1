@@ -87,8 +87,8 @@ def heatmap_plot():
     axes[1, 2].axis("off")
 
     fig2.colorbar(im, ax=axes[:, :], fraction=0.05, pad=0.025)
-    fig2.supxlabel("$x$-coordinate", fontsize=18)
-    fig2.supylabel("$y$-coordinate", fontsize=18, x=0.1)
+    fig2.supxlabel("$x$-coordinate", fontsize=12)
+    fig2.supylabel("$y$-coordinate", fontsize=12, x=0.1)
 
     return fig2
 

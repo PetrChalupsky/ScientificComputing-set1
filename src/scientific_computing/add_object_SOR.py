@@ -72,7 +72,6 @@ def optimal_omega_objects(width, eps, objects):
 
     # Find index of minimal number of iterations
     index = num_iterations.index(min(num_iterations))
-
     return omega_list[index]
 
 
@@ -82,12 +81,12 @@ def calculate_optimal_omega_objects(eps, list_objects, list_N):
     Returns figure for the optimal value of omega versus the width of the grid.
     """
 
-    width = int(list_N[0])
-    objects = create_objects(list_objects, width)
+    #objects = create_objects(list_objects, width)
 
     list_omega = []
 
     for N in list_N:
+        objects = create_objects(list_objects, N)
         omega = optimal_omega_objects(N, eps, objects)
         list_omega.append(omega)
 
