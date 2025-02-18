@@ -25,4 +25,3 @@ for time in times:
 
     analy_sol = analytical_solution(D, time)
     np.save(f"data/time_dep_diff_analy_{time}", analy_sol)
-

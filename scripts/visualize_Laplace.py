@@ -4,13 +4,14 @@ Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
 Student IDs: 15746704, 15719227 and 13392425
 
 File description:
-    This code contains functions to compare iteration methods that compute 
+    This code contains functions to compare iteration methods that compute
     diffusion over a square grid, using the Laplace equation.
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
 from scientific_computing.laplace import analytical_solution
+
 
 def visualize_comparison(width):
     """

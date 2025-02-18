@@ -26,11 +26,13 @@ cbar.ax.tick_params(labelsize=14)  # Set colorbar tick label size
 
 axes[0].set_ylabel("Time", fontsize=18)
 axes[1].set_xlabel("$x$-coordinate", fontsize=18)
-axes[0].set_title("A", fontsize=18)  # Initial conditions a=5, piecewise (viz assignment instructions)
+axes[0].set_title(
+    "A", fontsize=18
+)  # Initial conditions a=5, piecewise (viz assignment instructions)
 axes[1].set_title("B", fontsize=18)  # Initial conditions a=5
 axes[2].set_title("C", fontsize=18)  # Initial conditions a=2
 
 for ax in axes:
-    ax.tick_params(axis='both', which='major', labelsize=16)
+    ax.tick_params(axis="both", which="major", labelsize=16)
 
 fig.savefig("results/vibrating_string", dpi=300, bbox_inches="tight")
