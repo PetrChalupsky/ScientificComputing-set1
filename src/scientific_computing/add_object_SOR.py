@@ -35,7 +35,7 @@ def sor_with_objects(width, eps, omega, objects):
     delta = 100
     delta_list = []
     k = 0
-    while delta >= eps:
+    while delta >= eps and k < 10000:
         grid = new_grid.copy()
         for i in range(1, width - 1):
             for j in range(width):

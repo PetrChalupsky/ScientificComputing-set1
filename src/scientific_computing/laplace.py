@@ -41,7 +41,7 @@ def jacobi_iteration(width, eps):
     delta = 100
     delta_list = []
     k = 0
-    while delta >= eps:
+    while delta >= eps and k < 10000:
         grid = new_grid.copy()
         for i in range(1, width - 1):
             for j in range(width):
@@ -72,7 +72,7 @@ def gauss_seidel(width, eps):
     delta = 100
     delta_list = []
     k = 0
-    while delta >= eps:
+    while delta >= eps and k < 10000:
         grid = new_grid.copy()
         for i in range(1, width - 1):
             for j in range(width):
@@ -104,7 +104,7 @@ def sor(width, eps, omega):
     delta = 100
     delta_list = []
     k = 0
-    while delta >= eps:
+    while delta >= eps and k < 10000:
         grid = new_grid.copy()
         for i in range(1, width - 1):
             for j in range(width):
