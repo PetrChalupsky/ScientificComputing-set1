@@ -1,4 +1,11 @@
-"""Runs time dependendent diffusion for couple selected time intervals"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Runs time dependendent diffusion for couple selected time intervals.
+"""
 
 import numpy as np
 from scientific_computing.time_dep_diff import time_dep_diff, analytical_solution

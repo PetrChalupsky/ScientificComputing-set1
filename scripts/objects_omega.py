@@ -1,4 +1,11 @@
-"""Computes optimal omega for grid with objects"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Computes optimal omega for grid with objects.
+"""
 
 import numpy as np
 from scientific_computing.add_object_SOR import (

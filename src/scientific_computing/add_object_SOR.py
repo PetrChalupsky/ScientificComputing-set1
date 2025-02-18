@@ -1,4 +1,11 @@
-"""Adds objects (sinks) to 2D diffusion grid"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Adds objects (sinks) to 2D diffusion grid.
+"""
 
 import numpy as np
 from numba import njit

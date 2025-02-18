@@ -1,4 +1,11 @@
-"""Solves the vibrating string for different initial conditions"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Solves the vibrating string for different initial conditions.
+"""
 
 import numpy as np
 from math import pi

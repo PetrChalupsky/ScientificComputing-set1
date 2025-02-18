@@ -1,6 +1,11 @@
 """
-This code contains functions to calculate and visualize concentration diffusion
-over a square grid, using the time dependent diffusion equation.
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    This code contains functions to calculate and visualize concentration diffusion
+    over a square grid, using the time dependent diffusion equation.
 """
 
 import numpy as np

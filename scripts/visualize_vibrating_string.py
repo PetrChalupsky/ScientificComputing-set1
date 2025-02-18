@@ -1,4 +1,11 @@
-"""Visualizes the vibrating string heatmap solution"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Visualizes the vibrating string heatmap solution.
+"""
 
 import matplotlib.pyplot as plt
 import numpy as np

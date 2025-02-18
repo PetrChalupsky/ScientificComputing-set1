@@ -1,4 +1,11 @@
-"""Calculates steady state of Laplace equation with objects and stores the results"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Calculates steady state of Laplace equation with objects and stores the results.
+"""
 
 from scientific_computing.add_object_SOR import create_objects, sor_with_objects
 import numpy as np

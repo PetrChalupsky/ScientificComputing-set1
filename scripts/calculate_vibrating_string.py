@@ -1,4 +1,11 @@
-"""Solves the vibrating string and stores the data"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Solves the vibrating string and stores the data.
+"""
 
 from scientific_computing.vibrating_string import (
     solve_vibrating_string,

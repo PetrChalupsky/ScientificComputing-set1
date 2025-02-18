@@ -1,4 +1,11 @@
-"""Visualization of primitive insulation"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Visualization of primitive insulation.
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 

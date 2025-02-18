@@ -1,4 +1,11 @@
-"""Solves the time dependent diffusion"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Solves the time dependent diffusion.
+"""
 
 import numpy as np
 from matplotlib.animation import FuncAnimation

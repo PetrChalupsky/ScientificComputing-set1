@@ -1,4 +1,11 @@
-"""Calculates steady state of Laplace equation and stores the results"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Calculates steady state of Laplace equation and stores the results.
+"""
 
 import numpy as np
 from scientific_computing.laplace import (

@@ -1,4 +1,11 @@
-"""Visualize optimal omega for Laplace equation with objects"""
+"""
+Course: Scientific computing
+Names: Lisa Pijpers, Petr Chalupský and Tika van Bennekum
+Student IDs: 15746704, 15719227 and 13392425
+
+File description:
+    Visualize optimal omega for Laplace equation with objects.
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt
