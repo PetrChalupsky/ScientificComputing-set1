@@ -56,7 +56,7 @@ def sor_with_objects(width, eps, omega, objects):
 
 @njit
 def optimal_omega_objects(width, eps, objects):
-    omega_list = np.arange(1.1, 1.99, 0.01)
+    omega_list = np.arange(1.5, 1.999, 0.001)
     num_iterations = []
 
     for omega in omega_list:
@@ -89,7 +89,7 @@ def calculate_optimal_omega_objects(eps, list_objects, list_N):
 
 @njit
 def optimal_omega(width, eps):
-    omega_list = np.arange(1.1, 1.99, 0.01)
+    omega_list = np.arange(1.5, 1.999, 0.001)
     num_iterations = []
 
     for omega in omega_list:

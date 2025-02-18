@@ -43,9 +43,11 @@ def visualize_comparison(width):
         label="Analytical",
     )
 
-    plt.xlabel("$y$-coordinate", fontsize=14)
-    plt.ylabel("Concentration", fontsize=14)
-    plt.legend(fontsize=14)
+    plt.xlabel("$y$-coordinate", fontsize=18)
+    plt.ylabel("Concentration", fontsize=18)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
+    plt.legend(fontsize=16)
 
     return fig
 
@@ -86,10 +88,12 @@ def visualize_comparison_delta():
         np.linspace(1, sor_k_191, sor_k_191), sor_delta_191, label=r"SOR $\omega=1.91$"
     )
 
-    plt.xlabel("$k$", fontsize=14)
-    plt.ylabel(r"$\delta$", fontsize=14)
+    plt.xlabel("$k$", fontsize=18)
+    plt.ylabel(r"$\delta$", fontsize=18)
     plt.yscale("log")
-    plt.legend(fontsize=14)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
+    plt.legend(fontsize=16)
 
     return fig
 
@@ -106,8 +110,10 @@ def visualize_optimal_omega():
 
     plt.plot(list_N, list_omega, "o-")
 
-    plt.xlabel("$N$", fontsize=14)
-    plt.ylabel(r"$\omega$", fontsize=14)
+    plt.xlabel("$N$", fontsize=18)
+    plt.ylabel(r"$\omega$", fontsize=18)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
 
     return fig
 

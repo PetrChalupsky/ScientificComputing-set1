@@ -46,9 +46,11 @@ def visualize_comparison(width):
     )
 
     handles.append(custom_label)
-    plt.xlabel("$y$-coordinate", fontsize=14)
-    plt.ylabel("Concentration", fontsize=14)
-    plt.legend(handles=handles, fontsize=14)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
+    plt.xlabel("$y$-coordinate", fontsize=18)
+    plt.ylabel("Concentration", fontsize=18)
+    plt.legend(handles=handles, fontsize=18)
 
     return fig
 
@@ -67,6 +69,8 @@ def heatmap_plot():
 
     # Reduce spacing between subplots
     plt.subplots_adjust(wspace=-0.01, hspace=0.25)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
 
     for i, time in enumerate(times):
         row, col = divmod(i, 3)
@@ -78,8 +82,8 @@ def heatmap_plot():
     axes[1, 2].axis("off")
 
     fig2.colorbar(im, ax=axes[:, :], fraction=0.05, pad=0.025)
-    fig2.supxlabel("$x$-coordinate", fontsize=14)
-    fig2.supylabel("$y$-coordinate", fontsize=14, x=0.1)
+    fig2.supxlabel("$x$-coordinate", fontsize=18)
+    fig2.supylabel("$y$-coordinate", fontsize=18, x=0.1)
 
     return fig2
 
@@ -90,13 +94,16 @@ def animation(width, D, dt, total_time):
     over time until a steady state is reached.
     """
     fig, ax = plt.subplots(figsize=(8, 6))
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
 
     # Initial grid
     grid = time_dep_diff(width, D, dt, 0)
     im = ax.imshow(grid, origin="lower", cmap="inferno", extent=[0, 1, 0, 1])
 
-    ax.set_xlabel("$x$-coordinate", fontsize=14)
-    ax.set_ylabel("$y$-coordinate", fontsize=14)
+    ax.set_xlabel("$x$-coordinate", fontsize=18)
+    ax.set_ylabel("$y$-coordinate", fontsize=18)
+    ax.tick_params(axis="both", which="major", labelsize=14)  # Set tick label size
     fig.colorbar(im, ax=ax)
 
     def animate(i):
