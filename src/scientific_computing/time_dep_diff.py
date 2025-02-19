@@ -37,10 +37,13 @@ def update_grid(width, dt, grid, D):
 
     factor = dt * D / dx**2
 
+    # Make a copy of the grid so that it does not overwrite the old grid
+    new_grid = grid.copy()
+
     # For each cell calculate new value with the explicit scheme.
     for i in range(1, width - 1):
         for j in range(width):
-            grid[i, j] = grid[i, j] + factor * (
+            new_grid[i, j] = grid[i, j] + factor * (
                 grid[(i + 1) % (width), j]
                 + grid[(i - 1) % (width), j]
                 + grid[i, (j - 1) % (width)]
@@ -48,7 +51,7 @@ def update_grid(width, dt, grid, D):
                 - 4 * grid[i, j]
             )
 
-    return grid
+    return new_grid
 
 
 def time_dep_diff(width, D, dt, t):
