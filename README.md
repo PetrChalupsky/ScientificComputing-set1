@@ -4,19 +4,10 @@
 
 After cloning this repository use:
 
-```conda env create -f environment.yml --prefix ./env```
+```conda create --name myenv python=3.10```
 
-to create environment based on environment.yml.
-To install new packages use:
+to create environment conda environment using python 3.10. Activate the environment and proceed to install required dependencies by running ```poetry install```
 
-```conda install package```
+To install poetry follow the instructions at this page: https://python-poetry.org/docs/#installing-with-the-official-installer
 
-Note that sometimes you might need different channel or have to resolve conflicts. Once you have finished adding packages update environment.yml using:
-
-```conda env export > environment.yml```
-
-Then stage and commit the changes, so others can use them. If you want to use updated environment.yml use:
-
-```conda env update --file environment.yml --prune```
-
-to update your current environment.
+All the scripts can be run using ```bash run_analysis.sh```

@@ -86,5 +86,5 @@ def animate_string(u, x):
         fig=fig, func=update, frames=u.shape[0], interval=30, blit=True
     )
 
-    anim.save("results/animate_string.mp4")
+    anim.save("results/animate_string.gif")
     return anim
